@@ -82,6 +82,9 @@ rm -rf $RPM_BUILD_ROOT
 	--optimize=2 \
 	--root=$RPM_BUILD_ROOT
 
+%{__rm} -r $RPM_BUILD_ROOT%{py_sitescriptdir}/moksha/common/tests
+%{__rm} -r $RPM_BUILD_ROOT%{py_sitescriptdir}/moksha/common/testtools
+
 %py_postclean
 %endif
 
@@ -91,25 +94,30 @@ rm -rf $RPM_BUILD_ROOT
 	install --skip-build \
 	--optimize=2 \
 	--root=$RPM_BUILD_ROOT
+
+%{__rm} -r $RPM_BUILD_ROOT%{py3_sitescriptdir}/moksha/common/tests
+%{__rm} -r $RPM_BUILD_ROOT%{py3_sitescriptdir}/moksha/common/testtools
 %endif
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%if %{with python3}
+%if %{with python2}
 %files
 %defattr(644,root,root,755)
 %doc README COPYING AUTHORS
 %attr(755,root,root) %{_bindir}/moksha
-#%{py_sitescriptdir}/moksha/
-%{py_sitescriptdir}/%{module}-%{version}*
+%dir %{py_sitescriptdir}/moksha
+%{py_sitescriptdir}/moksha/common
+%{py_sitescriptdir}/moksha.common-%{version}-py*.egg-info
+%{py_sitescriptdir}/moksha.common-%{version}-py*-nspkg.pth
 %endif
 
 %if %{with python3}
 %files -n python3-moksha-common
 %defattr(644,root,root,755)
 %doc README COPYING AUTHORS
-%{py3_sitescriptdir}/moksha/
-%{py3_sitescriptdir}/%{module}-%{version}*
-%{__python}3-moksha
+%dir %{py3_sitescriptdir}/moksha
+%dir %{py3_sitescriptdir}/moksha/common
+%{py3_sitescriptdir}/moksha.common-%{version}-py*.egg-info
 %endif
