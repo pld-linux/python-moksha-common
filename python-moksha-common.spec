@@ -8,7 +8,7 @@
 Summary:	Common components for Moksha
 Name:		python-moksha-common
 Version:	1.2.3
-Release:	1
+Release:	2
 License:	ASL 2.0 or MIT
 Group:		Development/Libraries
 Source0:	http://pypi.python.org/packages/source/m/%{module}/%{module}-%{version}.tar.gz
