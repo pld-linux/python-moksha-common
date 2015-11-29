@@ -14,6 +14,7 @@ Group:		Development/Libraries
 Source0:	http://pypi.python.org/packages/source/m/%{module}/%{module}-%{version}.tar.gz
 # Source0-md5:	c0898257d033d41f8f8c7e8fdb77058d
 URL:		http://pypi.python.org/pypi/moksha.common
+BuildRequires:	rpmbuild(macros) >= 1.710
 BuildRequires:	rpm-pythonprov
 %if %{with python2}
 BuildRequires:	python-decorator
