@@ -7,15 +7,15 @@
 %define	module moksha.common
 Summary:	Common components for Moksha
 Name:		python-moksha-common
-Version:	1.2.3
-Release:	2
+Version:	1.2.4
+Release:	1
 License:	ASL 2.0 or MIT
 Group:		Development/Libraries
 Source0:	http://pypi.python.org/packages/source/m/%{module}/%{module}-%{version}.tar.gz
-# Source0-md5:	c0898257d033d41f8f8c7e8fdb77058d
+# Source0-md5:	47fdd87d256eebbd1e3c62e1adea46c0
 URL:		http://pypi.python.org/pypi/moksha.common
-BuildRequires:	rpmbuild(macros) >= 1.710
 BuildRequires:	rpm-pythonprov
+BuildRequires:	rpmbuild(macros) >= 1.710
 %if %{with python2}
 BuildRequires:	python-decorator
 BuildRequires:	python-kitchen
